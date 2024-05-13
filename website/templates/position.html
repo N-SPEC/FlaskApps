@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position</title>
+</head>
+<body>
+    <h1>Position</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Position ID</th>
+                <th>Area ID</th>
+                <th>Position Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for position_item in positions %}
+                <tr>
+                    <td>{{ position_item.position_id }}</td>
+                    <td>{{ position_item.area_id }}</td>
+                    <td>{{ position_item.position_name }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Add New Position</h2>
+    <form method="POST" action="/position">
+        <label for="position_name">Position Name:</label>
+        <input type="text" id="position_name" name="position_name" required>
+        <label for="position_id">Position ID:</label>
+        <input type="text" id="position_id" name="position_id" required>
+        <label for="area_id">Area ID:</label>
+        <input type="text" id="area_id" name="area_id" required>
+        <button type="submit">Add Position</button>
+    </form>
+</body>
+</html>

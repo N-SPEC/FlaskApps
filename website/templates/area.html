@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area</title>
+</head>
+<body>
+    <h1>Area</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for area_item in areas %}
+                <tr>
+                    <td>{{ area_item.area_id }}</td>
+                    <td>{{ area_item.area_name }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Add New Area</h2>
+    <form method="POST" action="/area">
+        <label for="area_id">Area ID:</label>
+        <input type="text" id="area_id" name="area_id" required>
+        <label for="area_name">Area Name:</label>
+        <input type="text" id="area_name" name="area_name" required>
+        <button type="submit">Add Area</button>
+    </form>
+</body>
+</html>

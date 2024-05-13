@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+    <h2>Quick Links</h2>
+    <ul>
+        <li><a href="{{ url_for('views.show_area') }}">Areas</a></li>
+        <li><a href="{{ url_for('views.show_position') }}">Positions</a></li>
+        <li><a href="{{ url_for('views.area_position') }}">Area Positions</a></li>
+    </ul>
+{% endblock %}
+
+
+
+
+
